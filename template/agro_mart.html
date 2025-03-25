@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroMart</title>
+</head>
+<body>
+    <h1>AgroMart - Businesses</h1>
+    <a href="{% url 'create_business' %}">Create Business</a> |
+    <a href="{% url 'create_farmer' %}">Post as Farmer</a>
+    <div>
+        {% for business in businesses %}
+            <div>
+                <h2>{{ business.name }}</h2>
+                <p>{{ business.description }}</p>
+                <a href="{% url 'business_detail' business.id %}">View Products</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock %}
