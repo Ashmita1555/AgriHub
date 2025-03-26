@@ -1,18 +1,45 @@
-
 {% extends "base.html" %}
 {% block content %}
-<h2>Community Posts</h2>
-<div>
-    {% for post in posts %}
-        <div>
-            <h3>{{ post.title }}</h3>
-            <p>{{ post.content }}</p>
-            <small>Posted by {{ post.user }} on {{ post.created_at }}</small>
-            <p>Upvotes: {{ post.upvotes }}</p>
+
+<div class="community-container">
+    <!-- Post Input Section -->
+    <div class="post-input">
+        <img src="user-avatar.jpg" alt="User Avatar" class="user-avatar">
+        <input type="text" class="post-text" placeholder="Say something...">
+        <button class="post-btn">Post</button>
+    </div>
+
+    <!-- Posts Section -->
+    <div class="posts-section">
+        <h2 class="posts-title">Posts</h2>
+
+        <!-- Single Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="user-avatar.jpg" alt="User Avatar" class="post-avatar">
+                <span class="username">Anjal Ghimire</span>
+            </div>
+            <p class="post-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries...
+            </p>
+            <button class="reply-btn">Reply</button>
         </div>
-    {% empty %}
-        <p>No posts available.</p>
-    {% endfor %}
+
+        <!-- Another Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="user-avatar.jpg" alt="User Avatar" class="post-avatar">
+                <span class="username">John Doe</span>
+            </div>
+            <p class="post-content">
+                This is another example post ensuring a clean and modern UI.
+            </p>
+            <button class="reply-btn">Reply</button>
+        </div>
+
+        <!-- See More Button -->
+        <button class="see-more-btn">See More</button>
+    </div>
 </div>
 
 {% endblock %}
