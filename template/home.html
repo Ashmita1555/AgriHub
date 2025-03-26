@@ -2,116 +2,102 @@
 {% block content %}
 
 
-
-
-    <!-- Offer Box Slider Section -->
-<div id="offerBox" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        {% for plant in plants %}
-            <div class="carousel-item {% if forloop.first %} active {% endif %}">
-                <div class="d-flex">
-                    <!-- Offer Box Image -->
-                    <div class="box-image">
-                        <img src="{{ plant.image_url }}" alt="{{ plant.plant_name }}" class="d-block w-100">
-                    </div>
-
-                    <!-- Offer Box Text -->
-                    <div id="box-text">
-                        <h3>{{ plant.plant_name }}</h3> <!-- Plant name -->
-                        <p>{{ plant.facts }}</p> <!-- Plant facts -->
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#offerBox" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#offerBox" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-
-<br>
-<div>
-        <span>Plants</span>
-        <div class="row">
-            <!-- Product 1 -->
-            <div class="col-md">
-                <img class="thumbnail" src="/static/img/apple.jpg" alt="Apple">
-                <div class="box-element product">
-                    <h6><strong>Apple</strong></h6>
-                    <hr>
-                    <a class="btn btn-success" href='{% url "test" %}'>Check Disease</a>
-                </div>
-            </div>
-    
-            <!-- Product 2 -->
-            <div class="col-md">
-                <img class="thumbnail" src="/static/img/tomato.jpg" alt="Tomato">
-                <div class="box-element product">
-                    <h6><strong>Tomato</strong></h6>
-                    <hr>
-                    <a class="btn btn-success" href='{% url "test" %}'>Check Disease</a>
-                </div>
-            </div>
-    
-            <!-- Product 3 -->
-            <div class="col-md">
-                <img class="thumbnail" src="/static/img/corn.jpg" alt="Corn">
-                <div class="box-element product">
-                    <h6><strong>Corn</strong></h6>
-                    <hr>
-                    <a class="btn btn-success" href='{% url "test" %}'>Check Disease</a>
-                </div>
-            </div>
-    
-            <!-- Product 4 -->
-            <div class="col-md">
-                <img class="thumbnail" src="/static/img/grapes.jpg" alt="Grapes">
-                <div class="box-element product">
-                    <h6><strong>Grapes</strong></h6>
-                    <hr>
-                    <a class="btn btn-success" href='{% url "test" %}'>Check Disease</a>
-                </div>
-            </div>
+        <!-- News Ticker -->
+        <div class="news-ticker">
+            <div>Latest News: New farming techniques are being introduced | Market prices of crops have increased | Rainfall expected this week</div>
         </div>
-        <div>
-            <span>About Us </span>
-            <div class="row">
-                <!-- Person q 1 -->
-                <div class="col-md">
-                    <img class="person" src="/static/aboutus/asmita timalsina.jpg" alt="Apple">
-                    <div class="box-element p-intro">
-                        <h6><strong>Ashmita Timalsina</strong></h6>
-                        <hr>
-                       <p>Student at Academia Int'l College | Data Science Enthusiasts</p>
-                    </div>
-                </div>
-        
-                <!-- Product 2 -->
-                <div class="col-md">
-                    <img class="person" src="/static/aboutus/anjal.jpg" alt="Tomato">
-                    <div class="box-element p-intro">
-                        <h6><strong>Anjal Ghimire</strong></h6>
-                        <hr>
-                        <p>Student at Academia Int'l College | Data Science Enthusiasts</p>
-                    </div>
-                </div>
-        
-                <!-- Product 3 -->
-                <div class="col-md">
-                    <img class="person" src="/static/aboutus/ruth.jpg" alt="Corn">
-                    <div class="box-element p-intro">
-                        <h6><strong>Ruth Ghising</strong></h6>
-                        <hr>
-                        <p>Student at Academia Int'l College | Python Developer</p>
-                    </div>
+
+        <!-- Blog Post Slider -->
+        <section class="blog-slider">
+            <div class="blog-slide active">
+                <img src="blog1.jpg" alt="Blog Post 1">
+                <div class="blog-content">
+                    <h3>Best Organic Farming Tips</h3>
+                    <p>Discover the best methods for growing organic crops and increasing productivity.</p>
+                    <a href="blog1.html" class="read-more">Read More</a>
                 </div>
             </div>
+            <div class="blog-slide">
+                <img src="/static/img/apple.jpg" alt="Blog Post 2">
+                <div class="blog-content">
+                    <h3>How to Prevent Plant Diseases</h3>
+                    <p>Learn effective techniques to protect your crops from common plant diseases.</p>
+                    <a href="/static/img/apple.jpg" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="blog-slide">
+                <img src="/static/img/apple.jpg" alt="Blog Post 3">
+                <div class="blog-content">
+                    <h3>Modern Irrigation Techniques</h3>
+                    <p>Explore smart irrigation solutions that help save water and boost plant health.</p>
+                    <a href="/static/img/apple.jpg" class="read-more">Read More</a>
+                </div>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button id="prev">Previous</button>
+                <button id="next">Next</button>
+            </div>
+        </section>
+
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div>
+            <h2>Fruits</h2>
+        <div class="category-container">
+            <div class="card"><img src="/static/img/apple.jpg" alt="Strawberries"><p>Strawberries</p></div>
+            <div class="card"><img src="/static/img/apple.jpg" alt="Grapes"><p>Grapes</p></div>
+            <div class="card"><img src="/static/img/apple.jpg" alt="Peach"><p>Peach</p></div>
+            <div class="card"><img src="/static/img/apple.jpg" alt="Oranges"><p>Oranges</p></div>
+        </div>
+        </div>
+        
+        <div>
+            <h2>Vegetables</h2>
+        <div class="category-container">
+            <div class="card"><img src="/static/img/apple.jpg" alt="Potato"><p>Potato</p></div>
+            <div class="card"><img src="/static/img/apple.jpg" alt="Tomato"><p>Tomato</p></div>
+            <div class="card"><img src="/static/img/apple.jpg" alt="Chili"><p>Chili</p></div>
+            <div class="card"><img src="/static/img/apple.jpg" alt="Beans"><p>Beans</p></div>
+        </div>
+
+        </div>
+        
+        <div  >
+            <h2>Cereal Crops</h2>
+        <div class="category-container">
+            <div class="card"><img src="" alt="Corn"><p>Corn</p></div>
+            <div class="card"><img src="/static/img/apple.jpg" alt="Wheat"><p>Wheat</p></div>
+            <div class="card"><img src="/static/img/apple.jpg" alt="Barley"><p>Barley</p></div>
+        </div>
+        </div>
+        
+    </section>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector(".menu-toggle").addEventListener("click", function () {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+
+        // Blog Slider Functionality
+        let slides = document.querySelectorAll(".blog-slide");
+        let currentSlide = 0;
+
+        document.getElementById("next").addEventListener("click", function () {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add("active");
+        });
+
+        document.getElementById("prev").addEventListener("click", function () {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            slides[currentSlide].classList.add("active");
+        });
+    </script>
     
    
  
